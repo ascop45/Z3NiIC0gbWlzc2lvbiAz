@@ -1,3 +1,9 @@
+# Page d'accueil
 emal_homepage:
     path:     /
     defaults: { _controller: emalBundle:Default:index }
+
+# Page test
+emal_test:
+    path:       /test/{test}
+    defaults:   { _controller: emalBundle:Default:hello }
