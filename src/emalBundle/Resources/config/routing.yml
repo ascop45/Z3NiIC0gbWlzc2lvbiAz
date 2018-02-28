@@ -5,5 +5,10 @@ emal_homepage:
 
 # Page test
 emal_test:
-    path:       /test/{test}
+    path:       /test
     defaults:   { _controller: emalBundle:Default:hello }
+    
+# Redirection test
+emal_redirection:
+    path:       /redirection
+    defaults:   { _controller: emalBundle:Default:redirection }

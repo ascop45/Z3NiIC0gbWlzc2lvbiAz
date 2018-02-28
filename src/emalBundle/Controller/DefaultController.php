@@ -14,8 +14,14 @@ class DefaultController extends Controller
     }
     
     // test de reprise en main
-    public function helloAction($test="vide")
+    public function helloAction()
     {
-        return new Response("texte ".$test);
+        return $this->redirect($this->generateUrl("emal_redirection"));
+    }
+    
+    
+    public function redirectionAction()
+    {
+        return new Response('redirection');
     }
 }
