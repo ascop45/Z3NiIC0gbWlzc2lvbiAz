@@ -1,14 +1,4 @@
 # Page d'accueil
 emal_homepage:
-    path:     /
+    path:       /
     defaults: { _controller: emalBundle:Default:index }
-
-# Page test
-emal_test:
-    path:       /test
-    defaults:   { _controller: emalBundle:Default:hello }
-    
-# Redirection test
-emal_redirection:
-    path:       /redirection
-    defaults:   { _controller: emalBundle:Default:redirection }
