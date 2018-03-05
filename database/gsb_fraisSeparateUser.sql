@@ -39,26 +39,24 @@ CREATE TABLE IF NOT EXISTS `comptable` (
   `cp` char(5) DEFAULT NULL,
   `ville` char(30) DEFAULT NULL,
   `dateEmbauche` date DEFAULT NULL,
-  `idVehicule` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_idVehicule` (`idVehicule`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `comptable`
 --
 
-INSERT INTO `comptable` (`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`, `idVehicule`) VALUES
-('co1', 'Brees', 'Drew', 'dbrees', 'a3dd21e977de00ae3598d3ea72af729d2336d76496f1eb97761a3b87fb8d49bf9972c2e34dda18c1b97365f69539f06347914751f6d3e217b4ba4fe0508807d5', '2 rue des prés', '94230', 'Cachan', '2006-10-28', 4),
-('co10', 'Wayne', 'Bruce', 'bwayne', '7c2a6417a7e216058bd3cf5dffeaca8467bf8ab265aa6b57a6b87a89efcb8408114e3f6268b8cecea02bb77cfb45079c2f7001097c0ccafc9e6431462538f45d', '1 rue du théâtre', '46000', 'Cahors', '2001-05-22', 4),
-('co2', 'Brady', 'Tom', 'tbrady', '288106e0c097d1143c9ba1cbb1e5e068c3ce31af2d640e4679ec8c8519f074383b107f78145ffb0c8f5edece713b4866222e20b29cd3bc9c90d95d54015a79e9', '6 allée du bois', '94400', 'Vitry', '2003-06-28', 1),
-('co3', 'Newton', 'Cam', 'cnewton', 'bfae22ae1d4112278e00ccf761ddaa7fc8f7d5d60b7a81fa50836029a3a4f2e198a242af132d97ee01f02f5952d04fd0ce3391ba1b9a741224eeed06e0d9e273', '18 avenue de la loose', '75004', 'Paris', '2011-08-21', 2),
-('co4', 'Smith', 'Alex', 'asmith', '80ec947ffc96fdd2a72b603a62d0d40573711629fa124482f551d178712ad386c02e9fd0b92714a36c54ea478a9aa73e56af57459900e09ac9874198fd3dbd72', '27 rue de la gare', '94230', 'Cachan', '2005-03-28', 3),
-('co5', 'Wentz', 'Carson', 'cwentz', '18f25ba8b654a0788885a3218d23a53bb080203bdd83c8c4fa59700ce24d26be9b1817ee8851cb8d2949102ebf0514fa391e195d55fb636cf90e9a0316eef538', '25 boulevard de la liberté', '83330', 'La Crau', '2013-10-10', 4),
-('co6', 'Watt', 'JJ', 'jwatt', '69fcbde54cf73e5c14c9905dbd8659069d91059941ed6060c4f9bfa0cdb2e3290512ca36237c9240712c8dfa38216beb427e379a6ccd0f2ceb248505ac4eaf78', '30 rue du texas', '75016', 'Paris', '2000-03-28', 4),
-('co7', 'Manning', 'Peyton', 'pmanning', '57c8fb76d361856a268b0cb0ad0126ab40307b6faaf4d196afe4c1c69a1637e52d6332b5b69d9757522ae3b13359dee909b6af51faf3cd0dd6860cab3b664903', '26 avenue Neil Armstrong', '94230', 'Cachan', '2006-10-28', 1),
-('co8', 'Escobar', 'Pablo', 'pescobar', '27d716f9d509a11f66844ab4537bac78ea172f0d35aee161c2e8fbaf406c23f94e61ea326daaf6b25b212ac4b3a531dad42e538ed5304c1bc5a7b469cc72a637', '20 chemin des fleurs', '75006', 'Paris', '2013-05-22', 4),
-('co9', 'Norman', 'Josh', 'jnorman', 'de588535fbeb05dd796e4e1fc321ce7dda924c3b105d1a489dbffd7de53c53d6f5302c1c7f2b0f75b7847162cc95881057dea1e1aed01d9ac17742cec7b36909', '2 allée du random', '46000', 'Cahors', '2002-09-22', 4);
+INSERT INTO `comptable` (`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`) VALUES
+('co1', 'Brees', 'Drew', 'dbrees', 'a3dd21e977de00ae3598d3ea72af729d2336d76496f1eb97761a3b87fb8d49bf9972c2e34dda18c1b97365f69539f06347914751f6d3e217b4ba4fe0508807d5', '2 rue des prés', '94230', 'Cachan', '2006-10-28'),
+('co10', 'Wayne', 'Bruce', 'bwayne', '7c2a6417a7e216058bd3cf5dffeaca8467bf8ab265aa6b57a6b87a89efcb8408114e3f6268b8cecea02bb77cfb45079c2f7001097c0ccafc9e6431462538f45d', '1 rue du théâtre', '46000', 'Cahors', '2001-05-22'),
+('co2', 'Brady', 'Tom', 'tbrady', '288106e0c097d1143c9ba1cbb1e5e068c3ce31af2d640e4679ec8c8519f074383b107f78145ffb0c8f5edece713b4866222e20b29cd3bc9c90d95d54015a79e9', '6 allée du bois', '94400', 'Vitry', '2003-06-28'),
+('co3', 'Newton', 'Cam', 'cnewton', 'bfae22ae1d4112278e00ccf761ddaa7fc8f7d5d60b7a81fa50836029a3a4f2e198a242af132d97ee01f02f5952d04fd0ce3391ba1b9a741224eeed06e0d9e273', '18 avenue de la loose', '75004', 'Paris', '2011-08-21'),
+('co4', 'Smith', 'Alex', 'asmith', '80ec947ffc96fdd2a72b603a62d0d40573711629fa124482f551d178712ad386c02e9fd0b92714a36c54ea478a9aa73e56af57459900e09ac9874198fd3dbd72', '27 rue de la gare', '94230', 'Cachan', '2005-03-28'),
+('co5', 'Wentz', 'Carson', 'cwentz', '18f25ba8b654a0788885a3218d23a53bb080203bdd83c8c4fa59700ce24d26be9b1817ee8851cb8d2949102ebf0514fa391e195d55fb636cf90e9a0316eef538', '25 boulevard de la liberté', '83330', 'La Crau', '2013-10-10'),
+('co6', 'Watt', 'JJ', 'jwatt', '69fcbde54cf73e5c14c9905dbd8659069d91059941ed6060c4f9bfa0cdb2e3290512ca36237c9240712c8dfa38216beb427e379a6ccd0f2ceb248505ac4eaf78', '30 rue du texas', '75016', 'Paris', '2000-03-28'),
+('co7', 'Manning', 'Peyton', 'pmanning', '57c8fb76d361856a268b0cb0ad0126ab40307b6faaf4d196afe4c1c69a1637e52d6332b5b69d9757522ae3b13359dee909b6af51faf3cd0dd6860cab3b664903', '26 avenue Neil Armstrong', '94230', 'Cachan', '2006-10-28'),
+('co8', 'Escobar', 'Pablo', 'pescobar', '27d716f9d509a11f66844ab4537bac78ea172f0d35aee161c2e8fbaf406c23f94e61ea326daaf6b25b212ac4b3a531dad42e538ed5304c1bc5a7b469cc72a637', '20 chemin des fleurs', '75006', 'Paris', '2013-05-22'),
+('co9', 'Norman', 'Josh', 'jnorman', 'de588535fbeb05dd796e4e1fc321ce7dda924c3b105d1a489dbffd7de53c53d6f5302c1c7f2b0f75b7847162cc95881057dea1e1aed01d9ac17742cec7b36909', '2 allée du random', '46000', 'Cahors', '2002-09-22');
 
 -- --------------------------------------------------------
 
