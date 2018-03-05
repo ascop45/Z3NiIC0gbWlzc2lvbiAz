@@ -73,5 +73,182 @@ class Fichefrais
         $this->idfraisforfait = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-}
 
+    /**
+     * Set mois
+     *
+     * @param string $mois
+     *
+     * @return Fichefrais
+     */
+    public function setMois($mois)
+    {
+        $this->mois = $mois;
+
+        return $this;
+    }
+
+    /**
+     * Get mois
+     *
+     * @return string
+     */
+    public function getMois()
+    {
+        return $this->mois;
+    }
+
+    /**
+     * Set idutilisateur
+     *
+     * @param string $idutilisateur
+     *
+     * @return Fichefrais
+     */
+    public function setIdutilisateur($idutilisateur)
+    {
+        $this->idutilisateur = $idutilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get idutilisateur
+     *
+     * @return string
+     */
+    public function getIdutilisateur()
+    {
+        return $this->idutilisateur;
+    }
+
+    /**
+     * Set nbjustificatifs
+     *
+     * @param integer $nbjustificatifs
+     *
+     * @return Fichefrais
+     */
+    public function setNbjustificatifs($nbjustificatifs)
+    {
+        $this->nbjustificatifs = $nbjustificatifs;
+
+        return $this;
+    }
+
+    /**
+     * Get nbjustificatifs
+     *
+     * @return integer
+     */
+    public function getNbjustificatifs()
+    {
+        return $this->nbjustificatifs;
+    }
+
+    /**
+     * Set montantvalide
+     *
+     * @param string $montantvalide
+     *
+     * @return Fichefrais
+     */
+    public function setMontantvalide($montantvalide)
+    {
+        $this->montantvalide = $montantvalide;
+
+        return $this;
+    }
+
+    /**
+     * Get montantvalide
+     *
+     * @return string
+     */
+    public function getMontantvalide()
+    {
+        return $this->montantvalide;
+    }
+
+    /**
+     * Set datemodif
+     *
+     * @param \DateTime $datemodif
+     *
+     * @return Fichefrais
+     */
+    public function setDatemodif($datemodif)
+    {
+        $this->datemodif = $datemodif;
+
+        return $this;
+    }
+
+    /**
+     * Get datemodif
+     *
+     * @return \DateTime
+     */
+    public function getDatemodif()
+    {
+        return $this->datemodif;
+    }
+
+    /**
+     * Set idetat
+     *
+     * @param string $idetat
+     *
+     * @return Fichefrais
+     */
+    public function setIdetat($idetat)
+    {
+        $this->idetat = $idetat;
+
+        return $this;
+    }
+
+    /**
+     * Get idetat
+     *
+     * @return string
+     */
+    public function getIdetat()
+    {
+        return $this->idetat;
+    }
+
+    /**
+     * Add idfraisforfait
+     *
+     * @param \emalBundle\Entity\Fraisforfait $idfraisforfait
+     *
+     * @return Fichefrais
+     */
+    public function addIdfraisforfait(\emalBundle\Entity\Fraisforfait $idfraisforfait)
+    {
+        $this->idfraisforfait[] = $idfraisforfait;
+
+        return $this;
+    }
+
+    /**
+     * Remove idfraisforfait
+     *
+     * @param \emalBundle\Entity\Fraisforfait $idfraisforfait
+     */
+    public function removeIdfraisforfait(\emalBundle\Entity\Fraisforfait $idfraisforfait)
+    {
+        $this->idfraisforfait->removeElement($idfraisforfait);
+    }
+
+    /**
+     * Get idfraisforfait
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdfraisforfait()
+    {
+        return $this->idfraisforfait;
+    }
+}

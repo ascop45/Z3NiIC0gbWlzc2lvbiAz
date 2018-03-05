@@ -43,5 +43,86 @@ class Vehicule
     private $prixaukm;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set typeessence
+     *
+     * @param string $typeessence
+     *
+     * @return Vehicule
+     */
+    public function setTypeessence($typeessence)
+    {
+        $this->typeessence = $typeessence;
+
+        return $this;
+    }
+
+    /**
+     * Get typeessence
+     *
+     * @return string
+     */
+    public function getTypeessence()
+    {
+        return $this->typeessence;
+    }
+
+    /**
+     * Set nombrecheveau
+     *
+     * @param string $nombrecheveau
+     *
+     * @return Vehicule
+     */
+    public function setNombrecheveau($nombrecheveau)
+    {
+        $this->nombrecheveau = $nombrecheveau;
+
+        return $this;
+    }
+
+    /**
+     * Get nombrecheveau
+     *
+     * @return string
+     */
+    public function getNombrecheveau()
+    {
+        return $this->nombrecheveau;
+    }
+
+    /**
+     * Set prixaukm
+     *
+     * @param float $prixaukm
+     *
+     * @return Vehicule
+     */
+    public function setPrixaukm($prixaukm)
+    {
+        $this->prixaukm = $prixaukm;
+
+        return $this;
+    }
+
+    /**
+     * Get prixaukm
+     *
+     * @return float
+     */
+    public function getPrixaukm()
+    {
+        return $this->prixaukm;
+    }
+}

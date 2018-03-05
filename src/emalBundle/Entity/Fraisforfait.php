@@ -50,5 +50,96 @@ class Fraisforfait
         $this->idutilisateur = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-}
 
+    /**
+     * Get id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     *
+     * @return Fraisforfait
+     */
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Get libelle
+     *
+     * @return string
+     */
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * Set montant
+     *
+     * @param string $montant
+     *
+     * @return Fraisforfait
+     */
+    public function setMontant($montant)
+    {
+        $this->montant = $montant;
+
+        return $this;
+    }
+
+    /**
+     * Get montant
+     *
+     * @return string
+     */
+    public function getMontant()
+    {
+        return $this->montant;
+    }
+
+    /**
+     * Add idutilisateur
+     *
+     * @param \emalBundle\Entity\Fichefrais $idutilisateur
+     *
+     * @return Fraisforfait
+     */
+    public function addIdutilisateur(\emalBundle\Entity\Fichefrais $idutilisateur)
+    {
+        $this->idutilisateur[] = $idutilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Remove idutilisateur
+     *
+     * @param \emalBundle\Entity\Fichefrais $idutilisateur
+     */
+    public function removeIdutilisateur(\emalBundle\Entity\Fichefrais $idutilisateur)
+    {
+        $this->idutilisateur->removeElement($idutilisateur);
+    }
+
+    /**
+     * Get idutilisateur
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdutilisateur()
+    {
+        return $this->idutilisateur;
+    }
+}
