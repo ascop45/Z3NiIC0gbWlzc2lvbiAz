@@ -18,10 +18,10 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         // recuperation des variables transmis à la page
-        $request = Request::createFromGlobals();
+        //$request = Request::createFromGlobals();
         
         // creation du formulaire procedural
         $form = $this->createFormBuilder()
@@ -37,12 +37,26 @@ class DefaultController extends Controller
         $form->handleRequest($request);
         
         // traitement si formulaire soumis
-        if($form->isSubmitted())
+        if($form->isValid())
         {
             if($form->get('profil')->getData() == 'Visiteur')
-            {   return $this->render('@emal/visiteur/accueil_visiteur.html.twig');}
-            else
-            {   return $this->render('@emal/comptable/accueil_comptable.html.twig'); }
+            {
+                return $this->render('@emal/visiteur/accueil_visiteur.html.twig');
+            }
+            elseif($form->get('profil')->getData() == 'Comptable')
+            {
+                $id = $form->get('identifiant')->getData();
+                $mdp = hash("sha512", $form->get('motDePasse')->getData());
+                $retour = 'ok';
+                
+                $repository = $this->getDoctrine()->getManager()->getRepository('emalBundle:Comptable');
+                $visiteur = $repository->findOneBy(array('login'=>$id));
+                
+                if(!isset($visiteur) || $visiteur->getMdp() != $mdp)
+                { $retour = 'nope'; }
+                
+                return $this->render('@emal/comptable/accueil_comptable.html.twig', array('retour'=>$retour));
+            }
         }
         
         // affichage du formulaire
