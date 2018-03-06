@@ -36,8 +36,24 @@ class DefaultController extends Controller
         ;
         $form->handleRequest($request);
         
-        // traitement si formulaire soumis
+        
         if($form->isValid())
+        {
+            $login = $form->get('identifiant')->getData();
+            $mdp = $form->get('motDePasse')->getData();
+            $profil = $form->get('profil')->getData();
+            $repository = $this->getDoctrine()->getManager()->getRepository('emalBundle:'.$profil);
+            
+            
+            if($profil === 'Visiteur')
+            {   return $this->render('@emal/Visiteur/accueil_visiteur.html.twig'); }
+            elseif($profi === 'Comptable')
+            {   return $this->render('@emal/Comptable/accueil_comptable.html.twig'); }
+        }
+        
+        
+        // traitement si formulaire soumis
+        /*if($form->isValid())
         {
             if($form->get('profil')->getData() == 'Visiteur')
             {
@@ -57,7 +73,7 @@ class DefaultController extends Controller
                 
                 return $this->render('@emal/comptable/accueil_comptable.html.twig', array('retour'=>$retour));
             }
-        }
+        }*/
         
         // affichage du formulaire
         return $this->render('@emal/Default/index.html.twig', array('form'=>$form->createView()));
