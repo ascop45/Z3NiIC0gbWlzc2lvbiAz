@@ -46,9 +46,9 @@ class DefaultController extends Controller
             
             
             if($profil === 'Visiteur')
-            {   return $this->render('@emal/Visiteur/accueil_visiteur.html.twig'); }
+            {   return $this->render('@emal/visiteur/accueil_visiteur.html.twig', array('type'=> var_dump($repository))); }
             elseif($profi === 'Comptable')
-            {   return $this->render('@emal/Comptable/accueil_comptable.html.twig'); }
+            {   return $this->render('@emal/comptable/accueil_comptable.html.twig'); }
         }
         
         
