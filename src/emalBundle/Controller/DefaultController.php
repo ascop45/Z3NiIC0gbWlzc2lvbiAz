@@ -42,11 +42,12 @@ class DefaultController extends Controller
             $login = $form->get('identifiant')->getData();
             $mdp = $form->get('motDePasse')->getData();
             $profil = $form->get('profil')->getData();
+            
             $repository = $this->getDoctrine()->getManager()->getRepository('emalBundle:'.$profil);
             
             
             if($profil === 'Visiteur')
-            {   return $this->render('@emal/visiteur/accueil_visiteur.html.twig', array('type'=> var_dump($repository))); }
+            {   return $this->render('@emal/visiteur/accueil_visiteur.html.twig', array('type'=> $repository)); }
             elseif($profi === 'Comptable')
             {   return $this->render('@emal/comptable/accueil_comptable.html.twig'); }
         }
