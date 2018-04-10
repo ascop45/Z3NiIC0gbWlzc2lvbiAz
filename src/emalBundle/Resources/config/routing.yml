@@ -2,3 +2,8 @@
 emal_homepage:
     path:       /
     defaults: { _controller: emalBundle:Default:index }
+    
+# Route d'erreur
+erreur:
+    path:       /error/{code}
+    defaults:   { _controller: emalBundle:Default:erreur }
